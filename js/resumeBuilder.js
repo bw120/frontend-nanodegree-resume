@@ -1,12 +1,13 @@
 //bio json
 var bio = {
 	"name" : "Ben Wright",
+	"logo" : "images/logo.svg",
 	"role": "Web Developer",
 	"contacts" : {
 		"mobile" : "978-866-4808",
 		"email" : "benwright120@gmail.com",
 		"github" : "bw120",
-		"twitter" : "ben120",
+		"twitter" : "@ben120",
 		"location" : "Boston, MA"
 	},
 	"welcomeMesage": "Hire me. I am awesome!",
@@ -14,6 +15,8 @@ var bio = {
 	"biopic": "images/ben.jpg",
 	"display": function(){
 		//swap in the info from json into formatted html
+		var logo = '<img src="%data%" class="logo">';
+		var formattedLogo = logo.replace("%data%", bio.logo);
 		var formattedName = HTMLheaderName.replace("%data%", bio.name);
 		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -26,15 +29,17 @@ var bio = {
 		var formattedSkills;
 
 		//add all the data to the page
+		//$("#header").prepend(formattedLogo);
 		$("#header").prepend(formattedRole);
 		$("#header").prepend(formattedName);
+		$("#header").prepend(formattedLogo);
 		$("#header").append(formattedPic);
 		$("#header").append(formattedWelcome);
 		$("#header").append(HTMLskillsStart);
 		//cycle through all the skills and add
 		for (x in bio.skills) {
 			formattedSkills = HTMLskills.replace("%data%", bio.skills[x]);
-			$("#skillsH3").append(formattedSkills);
+			$("#skills").append(formattedSkills);
 		};
 
 		$("#topContacts").append(formattedMobile);
@@ -47,6 +52,11 @@ var bio = {
 		$("#footerContacts").append(formattedTwitter);
 		$("#footerContacts").append(formattedGithub);
 		$("#footerContacts").append(formattedLocation);
+
+		//additional format adjustment for logo, name & role
+		$("#header img:first, #header h1:first,  #header span:first").wrapAll("<div class='top-header'></div>")
+		$("#header h1:first,  #header span:first").wrapAll("<div class='name-title'></div>");
+		$("#header span:first").addClass("role");
 
 	}
 }

@@ -1,0 +1,14 @@
+The following were referenced while creating this site:
+
+Udacity:
+	-JavaScript Basics online course
+	https://www.udacity.com/course/viewer#!/c-ud804-nd/l-1946788554
+
+	-Intro to jQuery online course:
+	https://www.udacity.com/course/viewer#!/c-ud245-nd/l-3314378535/m-3316638706
+
+jQuery.com
+	http://api.jquery.com/
+
+W3Schools
+	http://www.w3schools.com/

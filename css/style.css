@@ -1,7 +1,8 @@
 * {
   padding:0;
   margin:0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+
 }
 
 .clearfix {
@@ -48,6 +49,9 @@ h2, h3, h4, h5 {
   padding-right: 5%;
 }
 
+hr {
+  clear: both;
+}
 
 .date-text {
   font-style: italic;
@@ -79,6 +83,11 @@ a {
   display: block;
 }
 
+.role {
+  font-size: 16px;
+  color: #CCCCCC;
+
+}
 .welcome-message {
   font-style: italic;
   font-size: 18px;
@@ -89,6 +98,12 @@ a {
 #skillsH3 {
   color: #F5AE23;
   display: none;
+  padding-top: 2%;
+}
+
+#topContacts {
+  padding-bottom: 2%;
+
 }
 
 .orange {
@@ -111,12 +126,16 @@ a {
 }
 
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: #142952;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #142952;
+}
+
+#name {
+
 }
 
 .flex-box {
@@ -126,6 +145,16 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+}
+
+.top-header {
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  justify-content: justify-content;
+  flex-wrap: nowrap;
+
 }
 
 .center-content {
@@ -141,8 +170,14 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   width: 200px;
+  display: none;
+}
+
+.logo {
+  padding: 10px 10px 10px 0px;
+  width: 75px;
   display: none;
 }
 
@@ -174,12 +209,14 @@ span {
   #letsConnect {
     margin-top: 5%;
   }
+
 }
 
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
   }
+
 }
 
 @media only screen and (max-width: 750px) {
@@ -189,6 +226,7 @@ span {
   .biopic {
     width: 150px;
   }
+
   .welcome-message {
     display: none;
   }
@@ -210,6 +248,10 @@ span {
 @media only screen and (min-width: 750px) {
   #skillsH3,
   .biopic {
+    display: block;
+
+  }
+  .logo {
     display: block;
   }
 }
