@@ -1,3 +1,14 @@
+ /* import fonts for social media icons */
+@import url(http://weloveiconfonts.com/api/?family=fontawesome|zocial);
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
 * {
   padding:0;
   margin:0;
@@ -143,6 +154,7 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
 }
@@ -151,6 +163,7 @@ a {
   display: -webkit-flex;
   display: flex;
   align-items: flex-end;
+  -webkit-align-items: flex-end;
   flex-direction: row;
   justify-content: justify-content;
   flex-wrap: nowrap;
@@ -179,6 +192,11 @@ ul {
   padding: 10px 10px 10px 0px;
   width: 75px;
   display: none;
+}
+
+.icons {
+  display: none;
+  padding: 10px;
 }
 
 img {
@@ -219,7 +237,7 @@ span {
 
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 749px) {
   #letsConnect {
     margin-top: 10%;
   }
@@ -229,6 +247,12 @@ span {
 
   .welcome-message {
     display: none;
+  }
+  .icons {
+    display: inline;
+  }
+  .contactTxt {
+    display: none
   }
 }
 
@@ -253,5 +277,8 @@ span {
   }
   .logo {
     display: block;
+  }
+  .icons {
+    display: none;
   }
 }

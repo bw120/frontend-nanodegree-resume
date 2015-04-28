@@ -19,11 +19,11 @@ var bio = {
 		var formattedLogo = logo.replace("%data%", bio.logo);
 		var formattedName = HTMLheaderName.replace("%data%", bio.name);
 		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-		var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-		var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+		var formattedMobile = HTMLmobile.replace("%data%", "<span class='orange-text icons zocial-call'></span>" + bio.contacts.mobile);
+		var formattedEmail = HTMLemail.replace("%data%", "<span class='orange-text icons zocial-email'></span>" + bio.contacts.email);
+		var formattedTwitter = HTMLtwitter.replace("%data%", "<span class='orange-text icons zocial-twitter'></span>" + bio.contacts.twitter);
+		var formattedGithub = HTMLgithub.replace("%data%", "<span class='orange-text icons zocial-github'></span>" + bio.contacts.github);
+		var formattedLocation = HTMLlocation.replace("%data%", "<span class='orange-text icons fontawesome-globe'></span>" + bio.contacts.location);
 		var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMesage);
 		var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
 		var formattedSkills;
