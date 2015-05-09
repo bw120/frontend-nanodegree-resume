@@ -98,7 +98,6 @@ https://developers.google.com/maps/documentation/javascript/reference
 */
 var map;    // declares a global map variable
 
-
 /*
 Start here! initializeMap() is called when page is loaded.
 */
@@ -106,7 +105,36 @@ function initializeMap() {
 
   var locations;
 
+//
+  var styles = [
+    {
+      stylers: [
+        { hue: "#F7941E" },
+        { saturation: -30 }
+      ]
+    },{
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [
+        { lightness: 100 },
+        { visibility: "simplified" }
+      ]
+    },{
+      featureType: "road",
+      elementType: "labels",
+      stylers: [
+        { visibility: "off" }
+      ]
+    }];
+      var styledMap = new google.maps.StyledMapType(styles,
+    {name: "Styled Map"});
+
+
+
+//
+
   var mapOptions = {
+    mapTypeId: google.maps.MapTypeId.ROAD,
     disableDefaultUI: true
   };
 
@@ -157,11 +185,20 @@ function initializeMap() {
     var name = placeData.formatted_address;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
 
+    //set up custom markers
+    var image = {
+      url: 'images/marker.png',
+      size: new google.maps.Size(30, 48),
+      origin: new google.maps.Point(0,0),
+      anchor: new google.maps.Point(30, 48)
+    };
+
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
       position: placeData.geometry.location,
-      title: name
+      title: name,
+      icon: image
     });
 
     // infoWindows are the little helper windows that open when you click
@@ -234,6 +271,8 @@ function initializeMap() {
   // the locations array
   pinPoster(locations);
 
+  map.mapTypes.set('map_style', styledMap);
+  map.setMapTypeId('map_style');
 }
 
 /*

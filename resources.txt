@@ -12,3 +12,9 @@ jQuery.com
 
 W3Schools
 	http://www.w3schools.com/
+
+Google Fonts
+	http://www.google.com/fonts
+
+Google Maps API
+	https://developers.google.com/maps/documentation/javascript/tutorial

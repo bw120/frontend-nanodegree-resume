@@ -11,7 +11,7 @@ var bio = {
 		"location" : "Boston, MA"
 	},
 	"welcomeMesage": "Hire me. I am awesome!",
-	"skills" : ["HTML", "CSS", "JavaScript", "jQuery", "GitHub"],
+	"skills" : ["HTML", "CSS", "JavaScript", "jQuery", "GitHub", "Photoshop", "Illustrator"],
 	"biopic": "images/ben.jpg",
 	"display": function(){
 		//swap in the info from json into formatted html
@@ -29,7 +29,6 @@ var bio = {
 		var formattedSkills;
 
 		//add all the data to the page
-		//$("#header").prepend(formattedLogo);
 		$("#header").prepend(formattedRole);
 		$("#header").prepend(formattedName);
 		$("#header").prepend(formattedLogo);
@@ -57,7 +56,6 @@ var bio = {
 		$("#header img:first, #header h1:first,  #header span:first").wrapAll("<div class='top-header'></div>")
 		$("#header h1:first,  #header span:first").wrapAll("<div class='name-title'></div>");
 		$("#header span:first").addClass("role");
-
 	}
 }
 
@@ -65,7 +63,7 @@ var bio = {
 var education = {
 	"school" : [
 		{
-		"name" : "RIT",
+		"name" : "Rochester Institute of Technology",
 		"location" : "Rochester, NY",
 		"degree" : "BS",
 		"majors" : "New Media Publishing",
@@ -106,7 +104,7 @@ var education = {
 		}
 	],
 	"display" : function(){
-		//add the school details
+		//format and add the school details
 		for (x in education.school) {
 
 			var formattedName = HTMLschoolName.replace("%data%", education.school[x].name);
@@ -120,7 +118,7 @@ var education = {
 			$(".education-entry:last").append(schoolDetails);
 		}
 
-		// add the online class details
+		//format and add the online class details
 		$("#education").append("<br>" + HTMLonlineClasses);
 		$("#education").append(HTMLschoolStart);
 
@@ -135,7 +133,6 @@ var education = {
 
 			$(".education-entry:last").append(onlineDetails);
 		}
-
 	}
 }
 
@@ -144,7 +141,7 @@ var work = {
 	"jobs" : [
 		{
 		"employer": "Pearson",
-		"title" : "Procurement and manufacturing specialist",
+		"title" : "Procurement and Manufacturing Specialist",
 		"location" : "Boston, MA",
 		"dates" : "March 2009 - present",
 		"description" : "Coordinate print and media projects with various vendors. Request quotes and cut purchase orders. Negotiate resolutions to billing disputes and quality issues. Work with vendors to maintain schedules, price targets and ensure products meets customer needs."
@@ -200,7 +197,6 @@ var work = {
 			//add all the formated info to the page
 			$("#workExperience").append(HTMLworkStart);
 			$(".work-entry:last").append(job);
-
 		};
 	}
 }
@@ -212,13 +208,13 @@ var projects = {
 		"title" : "Portfolio website",
 		"dates" : "March 2015",
 		"description" : "Built a portfolio website to display the projects I will be doing for the Udacity Front End Nano degree. The sites demonstrates my ability to create a responsive site with responsive images.",
-		"images" : ["http://placehold.it/125x125", "http://placehold.it/125x125", "http://placehold.it/125x125"]
+		"images" : ["images/portfolio_thumb.jpg", "http://placehold.it/125x125", "http://placehold.it/125x125"]
 		}
 	],
 	"display": function(){
 
 		for (x in projects.project) {
-
+			// format and add project info
 			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[x].title);
 			var formattedDates = HTMLprojectDates.replace("%data%", projects.project[x].dates);
 			var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[x].description);
@@ -231,15 +227,13 @@ var projects = {
 			var project = formattedTitle + formattedDates + formattedDescription + formattedImages;
 
 			$("#projects").append(HTMLprojectStart);
-
 			$(".project-entry:last").append(project);
-
+			$(".project-entry > img").addClass("border");
 		}
-
 	}
-
 }
 
+//call display functions to add to resume page
 bio.display();
 work.display();
 projects.display();
