@@ -22,6 +22,8 @@ var HTMLtwitter = '<li class="flex-item"><span class="orange-text contactTxt">tw
 var HTMLgithub = '<li class="flex-item"><span class="orange-text contactTxt">github</span><span class="white-text">%data%</span></li>';
 var HTMLblog = '<li class="flex-item"><span class="orange-text contactTxt">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text contactTxt">location</span><span class="white-text">%data%</span></li>';
+var HTMLlinkedIn = '<li class="flex-item"><span class="orange-text contactTxt">LinkedIn</span><span class="white-text">%data%</span></li>';
+
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';

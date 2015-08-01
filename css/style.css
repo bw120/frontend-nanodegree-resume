@@ -1,6 +1,4 @@
- /* import fonts for social media icons */
-@import url(http://weloveiconfonts.com/api/?family=fontawesome|zocial);
-/* zocial */
+
 [class*="zocial-"]:before {
   font-family: 'zocial', sans-serif;
 }
@@ -92,7 +90,9 @@ a {
   text-decoration: none;
   margin-top: 10px;
   display: block;
+  border: 0;
 }
+
 
 .role {
   font-size: 16px;
@@ -135,6 +135,11 @@ a {
   font-weight: bold;
   color: #FFFFFF;
 }
+a.white-text {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 0px;
+}
 
 .gray {
   background-color: #F3F3F3;
@@ -165,6 +170,12 @@ a {
   justify-content: space-around;
   padding: 15px;
   line-height: 155%;
+}
+.flex-item {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
 }
 
 .top-header {
