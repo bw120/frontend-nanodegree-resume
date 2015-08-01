@@ -43,7 +43,7 @@ var bio = {
 			$("#skills").append(formattedSkills);
 		};
 
-		$("#topContacts").append(formattedMobile);
+	//	$("#topContacts").append(formattedMobile);
 		$("#topContacts").append(formattedEmail);
 		$("#topContacts").append(formattedLinkedIn);
 		$("#topContacts").append(formattedTwitter);
